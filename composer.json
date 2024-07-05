@@ -25,5 +25,10 @@
             "type": "composer",
             "url": "https://repo.packagist.com/iqom/"
         }
+    },
+    "extra": {
+        "branch-alias": {
+            "v1.0.x": "1.0.x-dev"
+        }
     }
 }
