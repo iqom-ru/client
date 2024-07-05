@@ -1,6 +1,7 @@
 {
     "name": "iqom/iqom-client",
     "description": "API client for services of iqom.ru",
+    "version": "1.0.5",
     "minimum-stability": "stable",
     "prefer-stable": true,
     "type": "library",
