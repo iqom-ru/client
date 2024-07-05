@@ -1,6 +1,8 @@
 {
     "name": "leoza/iqom-client",
     "description": "API client for services of iqom.ru",
+    "minimum-stability": "stable",
+    "prefer-stable": true,
     "type": "library",
     "autoload": {
         "psr-4": {
@@ -13,6 +15,8 @@
             "email": "to@leonid.cc"
         }
     ],
-    "minimum-stability": "dev",
-    "require": {}
+    "require": {
+        "php": ">=8.2",
+        "guzzlehttp/guzzle": "^7.8"
+    }
 }
