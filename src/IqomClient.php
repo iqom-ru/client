@@ -1,6 +1,6 @@
 <?php
 
-namespace Leoza\IqomClient;
+namespace Iqom\IqomClient;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;

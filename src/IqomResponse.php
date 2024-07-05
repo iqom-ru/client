@@ -1,6 +1,6 @@
 <?php
 
-namespace Leoza\IqomClient;
+namespace Iqom\IqomClient;
 
 use Psr\Http\Message\ResponseInterface;
 
