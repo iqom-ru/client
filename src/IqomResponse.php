@@ -20,12 +20,11 @@ class IqomResponse
         return $e;
     }
 
-    public static function createOnPending(string $id, string $pendingRequestId): self
+    public static function createOnPending(string $id): self
     {
         $e = new self();
         $e->id = $id;
         $e->status = self::STATUS_PENDING;
-        $e->pendingRequestId = $pendingRequestId;
         return $e;
     }
 
@@ -47,7 +46,7 @@ class IqomResponse
         }
         $id = $data['id'] ?? null;
         if ($response->getStatusCode() == 102) {
-            return self::createOnPending($id, $data['pending_request_id'] ?? null);
+            return self::createOnPending($id);
         }
         if ($response->getStatusCode() == 200) {
             return self::createOnSuccess($id, $data['data'] ?? []);
@@ -58,7 +57,6 @@ class IqomResponse
     protected ?string $status = null;
     protected ?string $id = null;
     protected ?string $error = null;
-    protected ?string $pendingRequestId = null;
     protected array $data = [];
 
     public function isError(): bool
@@ -81,17 +79,12 @@ class IqomResponse
         return $this->id;
     }
 
-    public function getPendingRequestId(): ?string
-    {
-        return $this->pendingRequestId;
-    }
-
     public function getError(): ?string
     {
         return $this->error;
     }
 
-    protected function getData(): array
+    public function getData(): array
     {
         return $this->data;
     }
