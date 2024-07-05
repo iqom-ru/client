@@ -1,5 +1,5 @@
 {
-    "name": "leoza/iqom-client",
+    "name": "iqom/iqom-client",
     "description": "API client for services of iqom.ru",
     "minimum-stability": "stable",
     "prefer-stable": true,
@@ -18,5 +18,12 @@
     "require": {
         "php": ">=8.2",
         "guzzlehttp/guzzle": "^7.8"
+    },
+    "repositories": {
+        "packagist.org": false,
+        "private-packagist": {
+            "type": "composer",
+            "url": "https://repo.packagist.com/iqom/"
+        }
     }
 }
