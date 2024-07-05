@@ -38,7 +38,15 @@ class IqomClient
         return $this->client;
     }
 
-    public function makeRequest(string $action, array $params = []): IqomResponse
+    public function makeRequest(IqomRequest $request): IqomResponse
+    {
+        return $this->makeManualRequest(
+            $request->getAction(),
+            $request->getParams()
+        );
+    }
+
+    public function makeManualRequest(string $action, array $params = []): IqomResponse
     {
         try {
             $response = $this->getClient()->request(
@@ -59,14 +67,6 @@ class IqomClient
             );
         }
         return IqomResponse::createWithResponse($response);
-    }
-
-    public function checkPendingResponse(string|IqomResponse $pendingRequestId): IqomResponse
-    {
-        if ($pendingRequestId instanceof IqomResponse) {
-            $pendingRequestId = $pendingRequestId->getPendingRequestId();
-        }
-        return $this->makeRequest('promise/update', ['id' => $pendingRequestId]);
     }
 
 }
