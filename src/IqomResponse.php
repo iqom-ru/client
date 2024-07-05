@@ -59,6 +59,11 @@ class IqomResponse
     protected ?string $error = null;
     protected array $data = [];
 
+    public function getStatus(): string
+    {
+        return $this->status;
+    }
+
     public function isError(): bool
     {
         return $this->status == self::STATUS_ERROR;
