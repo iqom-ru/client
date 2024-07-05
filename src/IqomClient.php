@@ -55,7 +55,7 @@ class IqomClient
                 [
                     RequestOptions::CONNECT_TIMEOUT => 3,
                     RequestOptions::TIMEOUT => $this->timeout,
-                    RequestOptions::JSON => json_encode($params),
+                    RequestOptions::JSON => $params,
                     RequestOptions::HEADERS => [
                         'X-Authenticate-Id' => $this->apiKey
                     ]
