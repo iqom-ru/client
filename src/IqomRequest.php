@@ -30,30 +30,37 @@ class IqomRequest
         );
     }
 
-    public static function makeTranslationWriteRequest(array $data): self
+    public static function makeTranslationWriteRequest(string $projectId, array $translations): self
     {
         return new self(
             self::ACTION_TRANSLATION_WRITE,
-            $data
+            [
+                'project_id' => $projectId,
+                'translations' => $translations
+            ]
         );
     }
 
-    public static function makeTranslationReadRequest(array $domains, array $locales): self
+    public static function makeTranslationReadRequest(string $projectId, array $domains, array $locales): self
     {
         return new self(
             self::ACTION_TRANSLATION_READ,
             [
+                'project_id' => $projectId,
                 'domains' => $domains,
                 'locales' => $locales
             ]
         );
     }
 
-    public static function makeTranslationDeleteRequest(array $data): self
+    public static function makeTranslationDeleteRequest(string $projectId, array $keys): self
     {
         return new self(
             self::ACTION_TRANSLATION_DELETE,
-            $data
+            [
+                'project_id' => $projectId,
+                'keys' => $keys
+            ]
         );
     }
 

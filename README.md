@@ -50,12 +50,12 @@ var_dump($response->getData());
 
 Вызов:
 ```php
-IqomRequest::makeTranslationWriteRequest(string $data)
+IqomRequest::makeTranslationWriteRequest(string $projectId, array $translations)
 ```
 
 Структура данных:
 ```php
-$data = [
+$translations = [
     'ru' => [ // Локали
         'messages' => [ // Домены
             'hello.name' => 'Привет, %друг%!',  // Метка => сообщене
@@ -78,7 +78,7 @@ $data = [
 
 Вызов:
 ```php
-IqomRequest::makeTranslationReadRequest(array $domains, array $locales)
+IqomRequest::makeTranslationReadRequest(string $projectId, array $domains, array $locales)
 ```
 
 Структура данных:
@@ -118,15 +118,15 @@ $locales = [
 
 Вызов:
 ```php
-IqomRequest::makeTranslationDeleteRequest(array $data)
+IqomRequest::makeTranslationDeleteRequest(string $projectId, array $keys)
 ```
 
 Структура данных:
 ```php
-[
+$keys = [
     'ru' => [ // Локали
         'messages' => [ // Домены
-            'hello.name',
+            'hello.name',  // Ключи
             'logout'
         ],
         'forms' => [    // Домены
