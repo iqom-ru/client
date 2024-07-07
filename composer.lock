@@ -4,8 +4,67 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d26c573063aa272a517e41e616f1bb3c",
+    "content-hash": "e90e9dca21f40c4ef75c834f14ce472e",
     "packages": [
+        {
+            "name": "enqueue/dsn",
+            "version": "0.10.19",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-enqueue/dsn.git",
+                "reference": "f4991fe46dd01477deb566727170341b255e8479"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-enqueue/dsn/zipball/f4991fe46dd01477deb566727170341b255e8479",
+                "reference": "f4991fe46dd01477deb566727170341b255e8479",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://repo.packagist.com/iqom/dists/%package%/%version%/r%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "php": "^7.4|^8.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^9.5"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.10.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Enqueue\\Dsn\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://repo.packagist.com/iqom/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Parse DSN",
+            "homepage": "https://enqueue.forma-pro.com/",
+            "keywords": [
+                "dsn",
+                "parse"
+            ],
+            "support": {
+                "docs": "https://github.com/php-enqueue/enqueue-dev/blob/master/docs/index.md",
+                "email": "opensource@forma-pro.com",
+                "forum": "https://gitter.im/php-enqueue/Lobby",
+                "issues": "https://github.com/php-enqueue/enqueue-dev/issues",
+                "source": "https://github.com/php-enqueue/enqueue-dev"
+            },
+            "time": "2023-03-23T09:50:55+00:00"
+        },
         {
             "name": "guzzlehttp/guzzle",
             "version": "7.8.1",

@@ -2,6 +2,7 @@
 
 namespace Iqom\IqomClient;
 
+use Enqueue\Dsn\Dsn;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\RequestOptions;
@@ -14,17 +15,13 @@ class IqomClient
     private int $timeout;
     private ?Client $client = null;
 
-    public function __construct(
-        string $apiKey,
-        int $timeout = 0,
-        string $apiVersion = 'v1',
-        string $apiHost = 'api.iqom.ru',
-        string $apiSchema = 'https'
-    )
+    public function __construct(string $dsn)
     {
-        $this->apiKey = $apiKey;
-        $this->timeout = $timeout;
-        $this->apiUrl = $apiSchema . '://' . $apiHost . '/' . $apiVersion . '/';
+        $dsn = Dsn::parse($dsn);
+        /** @var Dsn $dsn */
+        $this->apiKey = $dsn->getPassword();
+        $this->timeout = $dsn->getQueryBag()->getDecimal('timeout', 0);
+        $this->apiUrl = $dsn->getScheme() . '://' . $dsn->getHost() . '/' . $dsn->getUser() . '/';
     }
 
     protected function getClient(): Client
