@@ -17,7 +17,7 @@ class IqomClient
 
     public function __construct(string $dsn)
     {
-        $dsn = Dsn::parse($dsn);
+        $dsn = Dsn::parseFirst($dsn);
         /** @var Dsn $dsn */
         $this->apiKey = $dsn->getPassword();
         $this->timeout = $dsn->getQueryBag()->getDecimal('timeout', 0);
