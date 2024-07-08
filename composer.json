@@ -18,7 +18,8 @@
     "require": {
         "php": ">=8.2",
         "guzzlehttp/guzzle": "^7.8",
-        "enqueue/dsn": "^0.10.19"
+        "enqueue/dsn": "^0.10.19",
+        "psr/log": "^3.0"
     },
     "repositories": {
         "packagist.org": false,
